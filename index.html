@@ -1,19 +1,24 @@
-<html>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-377138-5");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+---
+layout: default
+title: Nicola Sacchi
+---
 
-	<body>
-		This is a Test.
-	
-
-		<br/>
-		Test
-	</body>
-</html>
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  <h1>Interviews, Talks, Etc</h1>
+  <ul class="posts">
+    <li><span>test</span> test</li>
+  </ul>
+  
+  <h1>Open Source Projects</h1>
+  <ul class="posts">
+		<li>teste</li>
+  </ul>
+</div>
+  

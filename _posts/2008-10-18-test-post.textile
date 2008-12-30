@@ -1,0 +1,11 @@
+---
+layout: post
+title: How I Test
+---
+
+h1. {{ page.title }}
+
+p(meta). 18 Oct 2008 - Here
+
+Testing is goooood?
+
