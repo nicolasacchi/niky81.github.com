@@ -64,10 +64,25 @@
   </head>
   <body>
     <div class="iframe-wrapper">
-      <iframe id="googledoc" src="https://docs.google.com/document/d/1gP08Bhg9mJtzgm0CiaLKfnDKwT-VFKphQ8nP2TQ4-t0/pub"></iframe>
+      <iframe id="googledoc" src=""></iframe>
     </div>
     <script type="text/javascript">
+      //http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+      function getParameterByName(name, url) {
+          if (!url) {
+              url = window.location.href;
+          }
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      var url = getParameterByName('url');
       var iframe = document.getElementById('googledoc');
+      iframe.src = url;
       iframe.addEventListener('load', function(e){
         document.title = iframe.contentWindow.document.title;
         setTimeout(function(){
